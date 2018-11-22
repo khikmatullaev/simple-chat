@@ -1,0 +1,12 @@
+{{ use('yii/widgets/ActiveForm') }}
+
+{% set form = active_form_begin({
+    'id': 'msg-form',
+    'method': 'post',
+    'options': {
+        'class': 'form-horizontal',
+    }
+}) %}
+{{ html.csrfMetaTags() | raw }}
+<textarea class="form-control send-message" name="text" rows="3" placeholder="Write a reply..."></textarea>
+{{ active_form_end() }}
